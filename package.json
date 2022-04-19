@@ -1,0 +1,23 @@
+{
+  "name": "strive-homework-m6d2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizmatyakubov/Strive-Homework-M6D2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azizmatyakubov/Strive-Homework-M6D2/issues"
+  },
+  "homepage": "https://github.com/azizmatyakubov/Strive-Homework-M6D2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "pg": "^8.7.3"
+  }
+}
