@@ -1,7 +1,7 @@
 import express from 'express'
 import db from '../../db/models/index.js'
 
-const {Blog} = db
+const {Blog, Review} = db
 
 const blogRouter = express.Router()
 
@@ -17,7 +17,7 @@ blogRouter.post('/', async(req, res, next)=>{
 
 blogRouter.get('/', async(req, res, next)=>{
     try {
-        const data = await Blog.findAll()
+        const data = await Blog.findAll({include: [Review],})
         res.send(data)
     } catch (error) {
         next(error)
@@ -26,7 +26,7 @@ blogRouter.get('/', async(req, res, next)=>{
 
 blogRouter.get('/:id', async(req, res, next)=>{
     try {
-        const data = await Blog.findByPk(req.params.id)
+        const data = await Blog.findByPk(req.params.id, {include: [Review]})
         res.send(data)
     } catch (error) {
         next(error)
