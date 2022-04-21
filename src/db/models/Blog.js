@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize/types'
+import { DataTypes } from "sequelize"; // Right now
 import sequelize from '../index.js'
 
-const Blog = sequelize.define("blog", {
+const Blog = sequelize.define("blogs", {
     id: {
         primaryKey: true,
         type: DataTypes.UUID,
