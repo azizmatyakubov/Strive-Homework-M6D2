@@ -2,7 +2,7 @@ import express from "express";
 import db from '../../db/models/index.js'
 
 
-const {Review, Blog} = db
+const {Review, User} = db
 
 const ReviewRouter = express.Router()
 
@@ -19,7 +19,7 @@ ReviewRouter.post('/', async(req, res, next) => {
 
 ReviewRouter.get('/', async(req, res, next) => {
     try {
-        const data = await Review.findAll({ include: [Blog]})
+        const data = await Review.findAll({ include: [User]})
         
         res.status(200).send(data)
     } catch (error) {

@@ -1,7 +1,8 @@
 import express from "express";
 import db from '../../db/models/index.js'
+import Review from "../../db/models/Review.js";
 
-const {Product} = db
+const {Product, User} = db
 
 const productRouter = express.Router()
 
@@ -17,7 +18,9 @@ productRouter.post('/', async(req, res, next) => {
 
 productRouter.get('/', async(req, res, next) => {
     try {
-        const data = await Product.findAll()
+        const data = await Product.findAll({
+            include: {model: Review, include: {model: User}}
+        })
         res.status(200).send(data)
     } catch (error) {
         next(error)
