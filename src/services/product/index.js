@@ -8,8 +8,8 @@ const productRouter = express.Router()
 
 productRouter.post('/', async(req, res, next) => {
     try {
-        await Product.create({...req.body})
-        res.status(201).send({message: 'Created'})
+        const data = await Product.create({...req.body})
+        res.status(201).send(data)
     } catch (error) {
         next(error)
     }

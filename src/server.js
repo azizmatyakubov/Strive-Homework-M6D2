@@ -5,6 +5,7 @@ import blogRouter from './services/blog/index.js'
 import productRouter from './services/product/index.js'
 import reviewRouter from './services/reviews/index.js'
 import cors from 'cors'
+import userRouter from './services/user/index.js'
 const app = express()
 const PORT = process.env.PORT || 4000
 
@@ -14,7 +15,7 @@ app.use(cors())
 app.use('/blog', blogRouter)
 app.use('/product', productRouter)
 app.use('/reviews', reviewRouter)
-
+app.use('/user', userRouter)
 
 
 app.listen(PORT, async()=> {

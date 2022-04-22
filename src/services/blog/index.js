@@ -7,8 +7,7 @@ const blogRouter = express.Router()
 
 blogRouter.post('/', async(req, res, next)=>{
     try {
-        const jane = await Blog.create({ title: "React", content: "It is good" });
-        console.log("Jane's auto-generated ID:", jane.id);
+        const jane = await Blog.create(req.body);
         res.status(201).send(jane)
     } catch (error) {
         next(error)
