@@ -17,9 +17,7 @@ UserRouter.post('/', async(req, res, next) => {
 
 UserRouter.get('/', async(req, res, next)=>{
     try {
-        const data = await User.findAll({
-            include: [Blog]
-        })
+        const data = await User.findAll()
         res.status(200).send(data)
     } catch (error) {
         next(error)

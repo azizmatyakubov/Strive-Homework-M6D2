@@ -15,4 +15,4 @@ Review.belongsTo(User)
 Product.hasMany(Review, {onDelete: 'CASCADE'})
 Review.belongsTo(Product, {onDelete: 'CASCADE'})
 
-export default { Blog, Product, Review, User }
+export default {Product, Review, User }
